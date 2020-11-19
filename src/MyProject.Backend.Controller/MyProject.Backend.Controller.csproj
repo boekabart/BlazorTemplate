@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
-    <ProjectReference Include="..\MyProject.Backend.Controller\MyProject.Backend.Controller.csproj" />
+    <ProjectReference Include="..\MyProject.Common\MyProject.Common.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

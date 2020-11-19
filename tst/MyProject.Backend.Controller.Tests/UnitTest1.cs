@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace MyProject.ApiHostTests
+namespace MyProject.Backend.ControllerTests
 {
     public class UnitTest1
     {

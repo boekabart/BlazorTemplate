@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MyProject.ApiHost\MyProject.ApiHost.csproj" />
+    <ProjectReference Include="..\..\src\MyProject.Backend.Controller\MyProject.Backend.Controller.csproj" />
   </ItemGroup>
 
 </Project>

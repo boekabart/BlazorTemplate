@@ -3,25 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Common", "./src/MyProject.Common/MyProject.Common.csproj", "{357A11FC-B451-44AD-BA46-657E7ACB6A2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Common", ".\src\MyProject.Common\MyProject.Common.csproj", "{357A11FC-B451-44AD-BA46-657E7ACB6A2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Frontend", "./src/MyProject.Frontend/MyProject.Frontend.csproj", "{5C1FAA5F-D823-46CF-BE0B-7B2AE88BF71F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Frontend", ".\src\MyProject.Frontend\MyProject.Frontend.csproj", "{5C1FAA5F-D823-46CF-BE0B-7B2AE88BF71F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Backend", "./src/MyProject.Backend/MyProject.Backend.csproj", "{0EBB6C9B-EBE1-48B6-B20C-3B3F45316CC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Backend", ".\src\MyProject.Backend\MyProject.Backend.csproj", "{0EBB6C9B-EBE1-48B6-B20C-3B3F45316CC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.WebAssembly", "./src/MyProject.WebAssembly/MyProject.WebAssembly.csproj", "{F1644685-CA95-4DC0-AC0F-1DE0BBCF2982}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.WebAssembly", ".\src\MyProject.WebAssembly\MyProject.WebAssembly.csproj", "{F1644685-CA95-4DC0-AC0F-1DE0BBCF2982}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.BlazorHost", "./src/MyProject.BlazorHost/MyProject.BlazorHost.csproj", "{4042658E-A5F4-4080-AAB3-0F2CE28CF592}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.BlazorHost", ".\src\MyProject.BlazorHost\MyProject.BlazorHost.csproj", "{4042658E-A5F4-4080-AAB3-0F2CE28CF592}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.ApiHost", "./src/MyProject.ApiHost/MyProject.ApiHost.csproj", "{47DEE87A-BABD-4CED-998E-768060E2C6E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Backend.Controller", "src\MyProject.Backend.Controller\MyProject.Backend.Controller.csproj", "{3C184F28-3A38-499E-99F8-C7039C387E22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Backend.Client", "src\MyProject.Backend.Client\MyProject.Backend.Client.csproj", "{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.ApiHost", ".\src\MyProject.ApiHost\MyProject.ApiHost.csproj", "{47DEE87A-BABD-4CED-998E-768060E2C6E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E6C2A498-DB25-491C-8452-64E9FCB4C1F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Frontend.Tests", "./tst/MyProject.Frontend.Tests/MyProject.Frontend.Tests.csproj", "{CFB55BD0-9144-46B7-91E8-A2FBADD2A463}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Frontend.Tests", ".\tst\MyProject.Frontend.Tests\MyProject.Frontend.Tests.csproj", "{CFB55BD0-9144-46B7-91E8-A2FBADD2A463}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Backend.Tests", "./tst/MyProject.Backend.Tests/MyProject.Backend.Tests.csproj", "{9DDD5342-5F3F-49E5-8027-F60CBF161262}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Backend.Tests", ".\tst\MyProject.Backend.Tests\MyProject.Backend.Tests.csproj", "{9DDD5342-5F3F-49E5-8027-F60CBF161262}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.ApiHost.Tests", "./tst/MyProject.ApiHost.Tests/MyProject.ApiHost.Tests.csproj", "{60AD4EC9-878E-4A4B-B6A2-79296D7A64EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Backend.Controller.Tests", ".\tst\MyProject.Backend.Controller.Tests\MyProject.Backend.Controller.Tests.csproj", "{60AD4EC9-878E-4A4B-B6A2-79296D7A64EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -144,10 +148,36 @@ Global
 		{60AD4EC9-878E-4A4B-B6A2-79296D7A64EF}.Release|x64.Build.0 = Release|Any CPU
 		{60AD4EC9-878E-4A4B-B6A2-79296D7A64EF}.Release|x86.ActiveCfg = Release|Any CPU
 		{60AD4EC9-878E-4A4B-B6A2-79296D7A64EF}.Release|x86.Build.0 = Release|Any CPU
+		{3C184F28-3A38-499E-99F8-C7039C387E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C184F28-3A38-499E-99F8-C7039C387E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C184F28-3A38-499E-99F8-C7039C387E22}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3C184F28-3A38-499E-99F8-C7039C387E22}.Debug|x64.Build.0 = Debug|Any CPU
+		{3C184F28-3A38-499E-99F8-C7039C387E22}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3C184F28-3A38-499E-99F8-C7039C387E22}.Debug|x86.Build.0 = Debug|Any CPU
+		{3C184F28-3A38-499E-99F8-C7039C387E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C184F28-3A38-499E-99F8-C7039C387E22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C184F28-3A38-499E-99F8-C7039C387E22}.Release|x64.ActiveCfg = Release|Any CPU
+		{3C184F28-3A38-499E-99F8-C7039C387E22}.Release|x64.Build.0 = Release|Any CPU
+		{3C184F28-3A38-499E-99F8-C7039C387E22}.Release|x86.ActiveCfg = Release|Any CPU
+		{3C184F28-3A38-499E-99F8-C7039C387E22}.Release|x86.Build.0 = Release|Any CPU
+		{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}.Debug|x64.Build.0 = Debug|Any CPU
+		{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}.Debug|x86.Build.0 = Debug|Any CPU
+		{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}.Release|x64.ActiveCfg = Release|Any CPU
+		{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}.Release|x64.Build.0 = Release|Any CPU
+		{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}.Release|x86.ActiveCfg = Release|Any CPU
+		{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CFB55BD0-9144-46B7-91E8-A2FBADD2A463} = {E6C2A498-DB25-491C-8452-64E9FCB4C1F0}
 		{9DDD5342-5F3F-49E5-8027-F60CBF161262} = {E6C2A498-DB25-491C-8452-64E9FCB4C1F0}
 		{60AD4EC9-878E-4A4B-B6A2-79296D7A64EF} = {E6C2A498-DB25-491C-8452-64E9FCB4C1F0}
+		{3C184F28-3A38-499E-99F8-C7039C387E22} = {5468580C-72EB-4354-890F-C969EF06F3C6}
+		{2EA521B9-2622-4039-BD6B-B6CD4F40E80F} = {5468580C-72EB-4354-890F-C969EF06F3C6}
 	EndGlobalSection
 EndGlobal
