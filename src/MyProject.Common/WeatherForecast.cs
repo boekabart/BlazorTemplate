@@ -1,6 +1,6 @@
 using System;
 
-namespace MyProject.ApiHost
+namespace MyProject.Common
 {
     public class WeatherForecast
     {

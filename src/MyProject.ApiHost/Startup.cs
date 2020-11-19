@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using MyProject.Common;
 
 namespace MyProject.ApiHost
 {
@@ -24,8 +25,10 @@ namespace MyProject.ApiHost
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers();
+            services
+                .AddControllers()
+                .AddApplicationPart(typeof(Backend.Controller.Controllers.WeatherForecastController).Assembly);
+            services.AddSingleton<IWeatherForecastService, Backend.WeatherForecastService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

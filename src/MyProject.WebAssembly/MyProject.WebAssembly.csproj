@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MyProject.Frontend\MyProject.Frontend.csproj" />
   </ItemGroup>
 

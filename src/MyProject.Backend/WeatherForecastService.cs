@@ -1,10 +1,11 @@
+using MyProject.Common;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyProject.BlazorHost.Data
+namespace MyProject.Backend
 {
-    public class WeatherForecastService
+    public class WeatherForecastService : IWeatherForecastService
     {
         private static readonly string[] Summaries = new[]
         {

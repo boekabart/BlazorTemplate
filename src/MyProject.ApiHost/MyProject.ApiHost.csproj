@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyProject.Backend.Controller\MyProject.Backend.Controller.csproj" />
+    <ProjectReference Include="..\MyProject.Backend\MyProject.Backend.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
