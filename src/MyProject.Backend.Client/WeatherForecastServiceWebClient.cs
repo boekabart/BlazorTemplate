@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyProject.Backend.Client
 {
-    class WeatherForecastServiceWebClient : IWeatherForecastService
+    public class WeatherForecastServiceWebClient : IWeatherForecastService
     {
         public WeatherForecastServiceWebClient(HttpClient httpClient)
         {
@@ -20,7 +20,7 @@ namespace MyProject.Backend.Client
 
         public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
         {
-            var response = HttpClient.GetFromJsonAsync<WeatherForecast[]>($"/api/WeatherForecast?startDate={startDate:o}");
+            var response = HttpClient.GetFromJsonAsync<WeatherForecast[]>($"/api/WeatherForecast?startDate={startDate.ToUniversalTime():o}");
             return response;
         }
     }

@@ -41,6 +41,8 @@ namespace MyProject.ApiHost
 
             app.UseRouting();
 
+            app.UseCors(cp => cp.AllowAnyOrigin());
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

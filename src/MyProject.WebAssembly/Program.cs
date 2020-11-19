@@ -15,9 +15,12 @@ namespace MyProject.WebAssembly
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
-            builder.RootComponents.Add<App>("#app");
+            builder.RootComponents.Add<Frontend.App>("#app");
 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            var uri = new Uri(builder.HostEnvironment.BaseAddress);
+            var apiUri = new Uri($"http://{uri.Host}:5000/");
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = apiUri });
+            builder.Services.AddScoped<Common.IWeatherForecastService, Backend.Client.WeatherForecastServiceWebClient>();
 
             await builder.Build().RunAsync();
         }
