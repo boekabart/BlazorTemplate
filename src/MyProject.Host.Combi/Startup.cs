@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -58,16 +59,28 @@ namespace MyProject.Host.Combi
                 }
             );
 
-            app.UseBlazorFrameworkFiles();
+            app.Map("/wasm", wasm =>
+            {
+                wasm.UseRewriter(new RewriteOptions().AddRedirect(@"^$", "/home", 301));
+
+                wasm.UseBlazorFrameworkFiles();
+                wasm.UseStaticFiles();
+
+                wasm.UseRouting();
+
+                wasm.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapFallbackToFile("index.html");
+                });
+            });
+
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapFallbackToFile("index.html");
+                endpoints.MapFallbackToFile("choose.html");
             });
         }
-    }
+}
 }
