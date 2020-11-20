@@ -45,7 +45,7 @@ namespace MyProject.Host.Combi
                 app.UseExceptionHandler("/Error");
             }
 
-            app.Map("/ss", ssb =>
+            app.Map("/serverside", ssb =>
             {
                 ssb.UseExceptionHandler("/Error");
                 ssb.UseStaticFiles();
