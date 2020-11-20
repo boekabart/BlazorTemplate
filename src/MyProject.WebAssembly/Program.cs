@@ -18,7 +18,7 @@ namespace MyProject.WebAssembly
             builder.RootComponents.Add<Frontend.App>("#app");
 
             var uri = new Uri(builder.HostEnvironment.BaseAddress);
-            var apiUri = new Uri($"http://{uri.Host}:5000/");
+            var apiUri = uri;// new Uri($"http://{uri.Host}:5000/");
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = apiUri });
             builder.Services.AddScoped<Common.IWeatherForecastService, Backend.Client.WeatherForecastServiceWebClient>();
 
