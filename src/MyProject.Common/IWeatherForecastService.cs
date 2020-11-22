@@ -7,3 +7,4 @@ namespace MyProject.Common
         System.Threading.Tasks.Task<WeatherForecast[]> GetForecastAsync(DateTime startDate);
     }
 }
+

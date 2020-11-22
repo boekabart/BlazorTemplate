@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyProject.Backend.Client
 {
+
     public class WeatherForecastServiceWebClient : IWeatherForecastService
     {
         public WeatherForecastServiceWebClient(HttpClient httpClient)

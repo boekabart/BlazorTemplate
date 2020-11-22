@@ -1,16 +1,36 @@
-@page "/counter"
-
+﻿@page "/counter"
+@using Common
+@inject ICounterService CounterService
 <h1>Counter</h1>
 
-<p>Current count: @currentCount</p>
+<p>Current count: @(currentCount?.ToString()?? "⌛")</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
-    private int currentCount = 0;
 
-    private void IncrementCount()
+    private int? currentCount;
+
+    protected override void OnInitialized()
     {
-        currentCount++;
+        CounterService.OnNewValue += OnNewValue;
+        base.OnInitialized();
+    }
+
+    private void OnNewValue(object sender, int newValue)
+    {
+        currentCount = newValue;
+        this.StateHasChanged();
+    }
+
+    private async Task IncrementCount()
+    {
+        await CounterService.Increment(1);
+        currentCount = null;
+    }
+
+    public void Dispose()
+    {
+        CounterService.OnNewValue -= OnNewValue;
     }
 }

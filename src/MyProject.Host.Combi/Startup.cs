@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyProject.Backend.Controller.Hubs;
 using MyProject.Common;
 using System.Linq;
 
@@ -23,12 +24,17 @@ namespace MyProject.Host.Combi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddControllersWithViews();
+            services.AddSignalR();
             services
                 .AddControllers()
                 .AddApplicationPart(typeof(Backend.Controller.Controllers.WeatherForecastController).Assembly);
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddResponseCompression(opts =>
+            {
+                opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+                    new[] { "application/octet-stream" });
+            });
 
             services.AddSingleton<IWeatherForecastService, Backend.WeatherForecastService>();
         }
@@ -36,6 +42,8 @@ namespace MyProject.Host.Combi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseResponseCompression();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -79,6 +87,7 @@ namespace MyProject.Host.Combi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<CounterHub>("/api/hubs/counter");
                 endpoints.MapFallbackToFile("choose.html");
             });
         }
