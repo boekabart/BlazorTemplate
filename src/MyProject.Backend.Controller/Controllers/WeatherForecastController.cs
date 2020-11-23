@@ -10,7 +10,7 @@ using MyProject.Common;
 namespace MyProject.Backend.Controller.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private ILogger<WeatherForecastController> Logger { get; set; }
