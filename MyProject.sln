@@ -11,13 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.Backend", "src\My
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.WebAssembly", "src\MyProject.WebAssembly\MyProject.WebAssembly.csproj", "{F1644685-CA95-4DC0-AC0F-1DE0BBCF2982}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.BlazorHost", "src\MyProject.BlazorHost\MyProject.BlazorHost.csproj", "{4042658E-A5F4-4080-AAB3-0F2CE28CF592}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.Host.ServerSideBlazor", "src\MyProject.BlazorHost\MyProject.Host.ServerSideBlazor.csproj", "{4042658E-A5F4-4080-AAB3-0F2CE28CF592}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.Backend.Controller", "src\MyProject.Backend.Controller\MyProject.Backend.Controller.csproj", "{3C184F28-3A38-499E-99F8-C7039C387E22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.Server", "src\MyProject.Backend.Controller\MyProject.Server.csproj", "{3C184F28-3A38-499E-99F8-C7039C387E22}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.Backend.Client", "src\MyProject.Backend.Client\MyProject.Backend.Client.csproj", "{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.Client", "src\MyProject.Backend.Client\MyProject.Client.csproj", "{2EA521B9-2622-4039-BD6B-B6CD4F40E80F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.ApiHost", "src\MyProject.ApiHost\MyProject.ApiHost.csproj", "{47DEE87A-BABD-4CED-998E-768060E2C6E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.Host.WebApi", "src\MyProject.ApiHost\MyProject.Host.WebApi.csproj", "{47DEE87A-BABD-4CED-998E-768060E2C6E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E6C2A498-DB25-491C-8452-64E9FCB4C1F0}"
 EndProject
@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.Frontend.Tests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.Backend.Tests", "tst\MyProject.Backend.Tests\MyProject.Backend.Tests.csproj", "{9DDD5342-5F3F-49E5-8027-F60CBF161262}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.Backend.Controller.Tests", "tst\MyProject.Backend.Controller.Tests\MyProject.Backend.Controller.Tests.csproj", "{60AD4EC9-878E-4A4B-B6A2-79296D7A64EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.ClientServer.Tests", "tst\MyProject.Backend.Controller.Tests\MyProject.ClientServer.Tests.csproj", "{60AD4EC9-878E-4A4B-B6A2-79296D7A64EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosts", "Hosts", "{B584F5E5-50F2-45C5-9F70-26992D3A21D1}"
 EndProject
@@ -36,6 +36,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.ServerSide", "src\MyProject.ServerSide\MyProject.ServerSide.csproj", "{EBD0FC8D-21F7-4860-AFC7-B93CB64168BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HostingModels", "HostingModels", "{4D896F07-0A7B-4519-AD25-AFE16F6E1369}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{DC7975EA-6EAC-4531-B218-C4575323FB03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -208,6 +210,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{357A11FC-B451-44AD-BA46-657E7ACB6A2F} = {DC7975EA-6EAC-4531-B218-C4575323FB03}
+		{5C1FAA5F-D823-46CF-BE0B-7B2AE88BF71F} = {DC7975EA-6EAC-4531-B218-C4575323FB03}
+		{0EBB6C9B-EBE1-48B6-B20C-3B3F45316CC0} = {DC7975EA-6EAC-4531-B218-C4575323FB03}
 		{F1644685-CA95-4DC0-AC0F-1DE0BBCF2982} = {4D896F07-0A7B-4519-AD25-AFE16F6E1369}
 		{4042658E-A5F4-4080-AAB3-0F2CE28CF592} = {B584F5E5-50F2-45C5-9F70-26992D3A21D1}
 		{3C184F28-3A38-499E-99F8-C7039C387E22} = {ED0133C9-16AC-4781-B309-506911710709}

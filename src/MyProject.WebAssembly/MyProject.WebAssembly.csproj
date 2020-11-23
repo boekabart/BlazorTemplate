@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MyProject.Backend.Client\MyProject.Backend.Client.csproj" />
+    <ProjectReference Include="..\MyProject.Backend.Client\MyProject.Client.csproj" />
     <ProjectReference Include="..\MyProject.Frontend\MyProject.Frontend.csproj" />
   </ItemGroup>
 

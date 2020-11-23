@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -20,7 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MyProject.Backend.Controller\MyProject.Backend.Controller.csproj" />
+    <ProjectReference Include="..\..\src\MyProject.Backend.Client\MyProject.Client.csproj" />
+    <ProjectReference Include="..\..\src\MyProject.Backend.Controller\MyProject.Server.csproj" />
   </ItemGroup>
 
 </Project>
