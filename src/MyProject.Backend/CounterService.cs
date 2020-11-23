@@ -8,8 +8,16 @@ namespace MyProject.Backend
     public class CounterService : ICounterService
     {
         private int counter;
+        private EventHandler<int> onNewValue;
 
-        public EventHandler<int> OnNewValue{ get; set; }
+        public EventHandler<int> OnNewValue
+        {
+            get => onNewValue; set
+            {
+                onNewValue = value;
+                OnNewValue?.Invoke(this, counter);
+            }
+        }
 
         public Task Increment(int byHowMuch)
         {

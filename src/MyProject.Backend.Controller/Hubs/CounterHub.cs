@@ -13,6 +13,7 @@ namespace MyProject.Backend.Controller.Hubs
             this.hubContext = hubContext;
             counterService.OnNewValue += OnNewValue;
         }
+
         private async void OnNewValue(object sender, int newValue)
         {
             await hubContext.Clients.All.SendAsync("NewValue", newValue);

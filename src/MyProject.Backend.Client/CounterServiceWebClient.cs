@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.SignalR.Client;
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.SignalR.Client;
 using MyProject.Common;
 using System;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace MyProject.Backend.Client
@@ -9,38 +9,48 @@ namespace MyProject.Backend.Client
     public class CounterServiceWebClient : ICounterService
     {
         private HubConnection hubConnection;
-        private readonly HttpClient client;
+        private EventHandler<int> onNewValue;
+        private int? lastValue;
 
-        public EventHandler<int> OnNewValue { get ; set ; }
-
-        public CounterServiceWebClient(HttpClient client)
+        public EventHandler<int> OnNewValue
         {
-            this.client = client;
+            get => onNewValue;
+            set
+            {
+                onNewValue = value;
+                _ = Connect();
+                if (lastValue.HasValue)
+                    OnNewValue?.Invoke(this, lastValue.Value);
+            }
+        }
+
+        public CounterServiceWebClient(NavigationManager client)
+        {
+            var uri = client.ToAbsoluteUri("/api/hubs/counter");
+            hubConnection = new HubConnectionBuilder()
+            .WithUrl(uri)
+            .Build();
+
+            hubConnection.On<int>("NewValue", newValue =>
+            {
+                lastValue = newValue;
+                OnNewValue?.Invoke(this, newValue);
+            });
         }
 
         public async Task Increment(int byHowMuch)
         {
-            if (hubConnection is null || hubConnection.State == HubConnectionState.Disconnected)
-                await Connect();
+            await Connect();
             await hubConnection.SendAsync("Increment", byHowMuch);
         }
 
         private async Task Connect()
         {
-            if (hubConnection is null)
+            if (hubConnection.State != HubConnectionState.Connected)
             {
-                var uri = new Uri(client.BaseAddress, "/api/hubs/counter");
-                hubConnection = new HubConnectionBuilder()
-                .WithUrl(uri)
-                .Build();
-
-                hubConnection.On<int>("NewValue", newValue =>
-                {
-                    OnNewValue?.Invoke(this, newValue);
-                });
+                await hubConnection.StartAsync();
+                await hubConnection.SendAsync("Increment", 0);
             }
-
-            await hubConnection.StartAsync();
         }
     }
 }
