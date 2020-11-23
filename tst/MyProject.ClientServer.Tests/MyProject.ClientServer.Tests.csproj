@@ -20,8 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MyProject.Backend.Client\MyProject.Client.csproj" />
-    <ProjectReference Include="..\..\src\MyProject.Backend.Controller\MyProject.Server.csproj" />
+    <ProjectReference Include="..\..\src\MyProject.Client\MyProject.Client.csproj" />
+    <ProjectReference Include="..\..\src\MyProject.Server\MyProject.Server.csproj" />
   </ItemGroup>
 
 </Project>
