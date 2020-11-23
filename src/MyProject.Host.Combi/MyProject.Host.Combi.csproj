@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MyProject.Backend.Controller\MyProject.Backend.Controller.csproj" />
     <ProjectReference Include="..\MyProject.Backend\MyProject.Backend.csproj" />
+    <ProjectReference Include="..\MyProject.ServerSide\MyProject.ServerSide.csproj" />
     <ProjectReference Include="..\MyProject.WebAssembly\MyProject.WebAssembly.csproj" />
   </ItemGroup>
 

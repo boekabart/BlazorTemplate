@@ -21,6 +21,7 @@ namespace MyProject.WebAssembly
             var apiUri = uri;// new Uri($"http://{uri.Host}:5000/");
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = apiUri });
             builder.Services.AddScoped<Common.IWeatherForecastService, Backend.Client.WeatherForecastServiceWebClient>();
+            builder.Services.AddScoped<Common.ICounterService, Backend.Client.CounterServiceWebClient>();
 
             await builder.Build().RunAsync();
         }

@@ -25,30 +25,14 @@ namespace MyProject.ApiHost
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services
-                .AddControllers()
-                .AddApplicationPart(typeof(Backend.Controller.Controllers.WeatherForecastController).Assembly);
-            services.AddSingleton<IWeatherForecastService, Backend.WeatherForecastService>();
+            Backend.Controller.Startup.ConfigureServices(services);
+            Backend.Startup.ConfigureServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.UseRouting();
-
-            app.UseCors(cp => cp.AllowAnyOrigin());
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            Backend.Controller.Startup.Configure(app, env);
         }
     }
 }
