@@ -9,7 +9,7 @@
 
 @code {
 
-    private int? currentCount;
+    private int? currentCount = 5;
 
     protected override void OnInitialized()
     {
@@ -17,16 +17,16 @@
         base.OnInitialized();
     }
 
-    private void OnNewValue(object sender, int newValue)
+    private async void OnNewValue(object sender, int newValue)
     {
         currentCount = newValue;
-        this.StateHasChanged();
+        await InvokeAsync(StateHasChanged);
     }
 
     private async Task IncrementCount()
     {
-        await CounterService.Increment(1);
         currentCount = null;
+        await CounterService.Increment(1);
     }
 
     public void Dispose()

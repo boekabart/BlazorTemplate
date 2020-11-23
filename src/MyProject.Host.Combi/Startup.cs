@@ -37,6 +37,8 @@ namespace MyProject.Host.Combi
             });
 
             services.AddSingleton<IWeatherForecastService, Backend.WeatherForecastService>();
+            services.AddSingleton<ICounterService, Backend.CounterService>();
+            services.AddSingleton<CounterHubService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
